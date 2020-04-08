@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Extensions.Logging;
 using AGL.CodeChallenge.Services;
 using AGL.CodeChallenge.Common.Models;
+using System.IO;
 
 namespace AGL.CodeChallenge.ConsoleApp
 {
@@ -16,15 +17,19 @@ namespace AGL.CodeChallenge.ConsoleApp
     {
         private IPeopleService peopleService;
         private readonly ILogger<CatsAlphabeticalOrder> logger;
+        private readonly TextReader input;
+        private readonly TextWriter output;
 
         private const string UnexpectedErrorString = "An expected error occured while the AGL API is being called";
         private const string NoResultFoundString = "There is no data";
         private const string ResultFoundString = "Data found";
 
-        public CatsAlphabeticalOrder(IPeopleService peopleService, ILogger<CatsAlphabeticalOrder> logger)
+        public CatsAlphabeticalOrder(IPeopleService peopleService, ILogger<CatsAlphabeticalOrder> logger, TextReader input, TextWriter output)
         {
             this.peopleService = peopleService;
             this.logger = logger;
+            this.input = input;
+            this.output = output;
         }
 
         /// <summary>
@@ -43,7 +48,7 @@ namespace AGL.CodeChallenge.ConsoleApp
                 if(personList == null || personList.Count == 0)
                 {
                     this.logger.LogInformation(NoResultFoundString);
-                    Console.WriteLine(NoResultFoundString);
+                    this.output.WriteLine(NoResultFoundString);
                     return;
                 }
 
@@ -66,21 +71,21 @@ namespace AGL.CodeChallenge.ConsoleApp
 
                 foreach (var ownerGender in personListGroupedPerGenderCatNames)
                 {
-                    Console.WriteLine(ownerGender.OwnerGender);
+                    this.output.WriteLine(ownerGender.OwnerGender);
                     foreach (var catNames in ownerGender.CatNames)
                     {
-                        Console.WriteLine($" * {catNames}");
+                        this.output.WriteLine($" * {catNames}");
                     }
-                    Console.WriteLine();
+                    this.output.WriteLine();
                 }
             }
             catch (Exception ex)
             {
                 this.logger.LogError(ex, UnexpectedErrorString);
-                Console.WriteLine(UnexpectedErrorString);
+                this.output.WriteLine(UnexpectedErrorString);
             }
 
-            Console.ReadLine();
+            this.input.ReadLine();
         }
     }
 }

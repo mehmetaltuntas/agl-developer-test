@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGL.CodeChallenge.Services"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGL.CodeChallenge.Common", "AGL.CodeChallenge.Common\AGL.CodeChallenge.Common.csproj", "{7DAD81B1-0CFB-437F-95A7-09A3571DA073}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGL.CodeChallenge.ConsoleApp.Test", "AGL.CodeChallenge.Services.Test\AGL.CodeChallenge.ConsoleApp.Test\AGL.CodeChallenge.ConsoleApp.Test.csproj", "{465A516F-EA2B-4AE2-955C-57EB2568F1BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +35,13 @@ Global
 		{7DAD81B1-0CFB-437F-95A7-09A3571DA073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DAD81B1-0CFB-437F-95A7-09A3571DA073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DAD81B1-0CFB-437F-95A7-09A3571DA073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{465A516F-EA2B-4AE2-955C-57EB2568F1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{465A516F-EA2B-4AE2-955C-57EB2568F1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{465A516F-EA2B-4AE2-955C-57EB2568F1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{465A516F-EA2B-4AE2-955C-57EB2568F1BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{ED28B112-649B-4245-B83A-9F10C8786B63} = {81BBDF01-C5AE-4186-B5D0-1304781B1676}
+		{465A516F-EA2B-4AE2-955C-57EB2568F1BD} = {81BBDF01-C5AE-4186-B5D0-1304781B1676}
 	EndGlobalSection
 EndGlobal
