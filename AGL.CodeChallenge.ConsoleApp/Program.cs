@@ -62,6 +62,8 @@ namespace AGL.CodeChallenge.ConsoleApp
             services.AddHttpClient<IPeopleService, PeopleService>();
 
             services.AddTransient<CatsAlphabeticalOrder>();
+            services.AddSingleton(Console.Out);
+            services.AddSingleton(Console.In);
         }
     }
 }

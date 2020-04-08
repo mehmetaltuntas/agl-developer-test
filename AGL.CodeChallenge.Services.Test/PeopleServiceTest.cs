@@ -45,5 +45,26 @@ namespace AGL.CodeChallenge.Services.Test
             // Assert
             result.Count.Equals(2);
         }
+
+        [Fact]
+        public async Task GivenSuccessResponseFromServer_WhenPersonRequests_ThenPersonsAreNotReturned()
+        {
+            // Arrange
+            var response = @"[]";
+
+            var logger = Mock.Of<ILogger<PeopleService>>();
+            var messageHandler = new MockHttpMessageHandler(response, HttpStatusCode.BadRequest);
+            var httpClient = new HttpClient(messageHandler)
+            {
+                BaseAddress = new Uri(appSettings.AGLDeveloperTest.Url)
+            };
+            var peopleService = new PeopleService(httpClient, logger, appSettings);
+
+            // Act
+            var result = await peopleService.GetPersonPetsAsync();
+
+            // Assert
+            Assert.Null(result);
+        }
     }
 }
