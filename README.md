@@ -23,11 +23,11 @@ Female
 ## Environment and Tools
 
 - Visual Studio For Mac - .Net Core 3.1
-- A Console App, .Net Standard , Test projects
+- A Console App, .Net Standard projects, Test projects
 - Xunit and Moq for unit testing
 
 ## Run it localy
 
-Download the solution to your machine and click on the AGL.CodeChallenge.sln file.
-If not, Set As Startup Project of AGL.CodeChallenge.ConsoleApp
-Run
+- Download the solution to your machine and click on the AGL.CodeChallenge.sln file
+- If not, Set As Startup Project of AGL.CodeChallenge.ConsoleApp
+- Run
