@@ -14,4 +14,8 @@
     <PackageReference Include="Moq" Version="4.13.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AGL.CodeChallenge.Common\AGL.CodeChallenge.Common.csproj" />
+    <ProjectReference Include="..\AGL.CodeChallenge.Services\AGL.CodeChallenge.Services.csproj" />
+  </ItemGroup>
 </Project>

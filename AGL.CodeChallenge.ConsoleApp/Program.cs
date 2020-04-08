@@ -59,7 +59,7 @@ namespace AGL.CodeChallenge.ConsoleApp
             services.Configure<AppSettings>(options => Configuration.GetSection("AppSettings").Bind(options));
             services.AddSingleton(sp => sp.GetService<IOptions<AppSettings>>().Value);
 
-            services.AddSingleton<IPeopleService, PeopleService>();
+            services.AddHttpClient<IPeopleService, PeopleService>();
 
             services.AddTransient<CatsAlphabeticalOrder>();
         }
